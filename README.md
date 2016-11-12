@@ -1,6 +1,7 @@
 Reactive Programming
 ====================
 
+
 ### 名词解释
 * reactive: 响应的，响应式的
 * stream: 流式的
@@ -9,6 +10,17 @@ Reactive Programming
 * Observable 可观测的
 * Flux: 流量
 * Mono: 单一
+
+### Reactive操作
+
+* Creation
+* Combine
+* transform 
+* Filter
+* Mathematical and Aggregate Operators
+* Utility Operators
+* Conditional and Boolean Operators
+* Error Handling
 
 ##### reactive stream
 
