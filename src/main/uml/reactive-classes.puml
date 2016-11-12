@@ -1,0 +1,61 @@
+@startuml
+
+package "org.reactivestreams" {
+   interface Publisher {
+      void subscribe(Subscriber<? super T> s)
+   }
+
+   interface Subscriber {
+       void onSubscribe(Subscription s)
+       void onNext(T t)
+       void onError(Throwable t)
+       void onComplete()
+   }
+
+   interface Subscription {
+      void request(long n)
+      void cancel()
+   }
+   Publisher -> Subscriber: Use
+   Subscriber -down-> Subscription: Use
+}
+
+package "rx" {
+    interface Observer {
+        void onCompleted()
+        void onError(Throwable e)
+        void onNext(T t)
+    }
+
+    interface RxSubscription {
+       void unsubscribe()
+       boolean isUnsubscribed()
+    }
+
+    class RxSubscriber implements Observer,RxSubscription {
+
+    }
+
+    class Observable {
+           Observable<T> create(OnSubscribe<T> f)
+           Subscription subscribe(Observer<? super T> observer)
+           Observable<T> just(T... data)
+    }
+
+    Observable --> Observer: Use
+}
+
+package "reactor" {
+
+     class Flux implements Publisher {
+        Flux<T> just(T... data)
+     }
+
+     class Mono implements Publisher {
+        Mono<T> just(T data)
+        Mono<T> justOrEmpty(T data)
+     }
+
+}
+
+@enduml
