@@ -12,8 +12,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <rxjava.version>1.2.4</rxjava.version>
-        <reactor.version>3.0.3.RELEASE</reactor.version>
+        <rxjava.version>1.2.6</rxjava.version>
+        <reactor.version>3.0.4.RELEASE</reactor.version>
     </properties>
 
     <dependencies>
@@ -30,7 +30,7 @@
         <dependency>
             <groupId>io.reactivex.rxjava2</groupId>
             <artifactId>rxjava</artifactId>
-            <version>2.0.3</version>
+            <version>2.0.5</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
