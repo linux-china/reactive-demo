@@ -17,6 +17,5 @@ public class ReactorTest {
         Flux<String> flux = Flux.just("red", "white", "blue");
         flux.map(String::toUpperCase)
                 .subscribe(System.out::println);
-
     }
 }

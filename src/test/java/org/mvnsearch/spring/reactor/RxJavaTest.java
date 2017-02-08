@@ -4,7 +4,6 @@ import org.junit.Test;
 import rx.Observable;
 import rx.Subscriber;
 import rx.functions.Action1;
-import rx.functions.Func1;
 
 import java.util.concurrent.TimeUnit;
 
