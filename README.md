@@ -53,6 +53,7 @@ Reactive Programming
 * http://reactivex.io: An API for asynchronous programming with observable streams
 * http://projectreactor.io: Reactor is a second-generation Reactive library for building non-blocking applications on the JVM based on the Reactive Streams Specification
 * http://reactivex.io/documentation/operators.html: reactive operations
+* https://dzone.com/articles/functional-amp-reactive-spring-along-with-netflix: Functional and Reactive Spring with Reactor and Netflix OSS
 
 ### Demo
 
