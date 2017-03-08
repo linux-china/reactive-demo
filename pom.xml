@@ -13,14 +13,13 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <rxjava.version>1.2.7</rxjava.version>
-        <reactor.version>3.0.5.RELEASE</reactor.version>
+        <reactor.version>Aluminium-SR1</reactor.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>io.projectreactor</groupId>
             <artifactId>reactor-core</artifactId>
-            <version>${reactor.version}</version>
         </dependency>
         <dependency>
             <groupId>io.reactivex</groupId>
@@ -39,6 +38,17 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.projectreactor</groupId>
+                <artifactId>reactor-bom</artifactId>
+                <version>Aluminium-SR1</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
     <build>
         <plugins>
             <plugin>
