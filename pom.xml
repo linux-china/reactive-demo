@@ -12,8 +12,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <rxjava.version>1.2.6</rxjava.version>
-        <reactor.version>3.0.4.RELEASE</reactor.version>
+        <rxjava.version>1.2.7</rxjava.version>
+        <reactor.version>3.0.5.RELEASE</reactor.version>
     </properties>
 
     <dependencies>
@@ -43,7 +43,7 @@
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.6.0</version>
+                <version>3.6.1</version>
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
