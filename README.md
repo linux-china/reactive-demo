@@ -3,6 +3,7 @@ Reactive Programming
 
 
 ### 名词解释
+
 * reactive: 响应的，响应式的
 * stream: 流式的
 * asynchronous: 异步的
@@ -46,6 +47,11 @@ Reactive Programming
 * Reactor和Spring整合密切
 * 在Java 8支持方面，Reactor基于Java 8，而RxJava是自己的API
 * RxJava的模型在其他语言都有实现，如果你用多语言的场景化，RxJava的模型更好一些
+
+### Kotlin Extension
+
+* https://github.com/ReactiveX/RxKotlin
+* https://github.com/reactor/reactor-kotlin-extensions
 
 ###  参考
 
