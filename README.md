@@ -16,7 +16,7 @@ Reactive Programming
 
 * Creation
 * Combine
-* transform 
+* transform(map)
 * Filter
 * Mathematical and Aggregate Operators
 * Utility Operators
@@ -46,7 +46,7 @@ Reactive Programming
 * RxJava诞生早，使用广泛，尤其在Netflix产品中
 * Reactor和Spring整合密切
 * 在Java 8支持方面，Reactor基于Java 8，而RxJava是自己的API
-* RxJava的模型在其他语言都有实现，如果你用多语言的场景化，RxJava的模型更好一些
+* RxJava的模型在其他语言都有实现，如果你用多语言的场景化，RxJava的模型更好一些，如Angular等
 
 ### Kotlin Extension
 
