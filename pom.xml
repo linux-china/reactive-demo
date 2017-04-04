@@ -48,10 +48,16 @@
             <artifactId>rxkotlin</artifactId>
             <version>1.0.0</version>
         </dependency>
+        <!--unit test-->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.projectreactor.addons</groupId>
+            <artifactId>reactor-test</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>
