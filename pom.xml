@@ -13,7 +13,6 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <rxjava.version>1.2.7</rxjava.version>
-        <reactor.version>Aluminium-SR1</reactor.version>
         <kotlin.version>1.1.1</kotlin.version>
     </properties>
 
@@ -66,7 +65,7 @@
             <dependency>
                 <groupId>io.projectreactor</groupId>
                 <artifactId>reactor-bom</artifactId>
-                <version>Aluminium-SR1</version>
+                <version>Aluminium-SR2</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -94,11 +93,6 @@
                         </configuration>
                     </execution>
                 </executions>
-                <configuration>
-                    <compilerPlugins>
-                        <plugin>spring</plugin>
-                    </compilerPlugins>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
