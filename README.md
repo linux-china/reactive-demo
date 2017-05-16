@@ -2,7 +2,7 @@ Reactive Programming
 ====================
 
 
-### 名词解释
+### Glossary
 
 * reactive: 响应的，响应式的
 * stream: 流式的
@@ -12,7 +12,7 @@ Reactive Programming
 * Flux: 流量
 * Mono: 单一
 
-### Reactive操作
+### Reactive Operation
 
 * Creation
 * Combine
@@ -53,7 +53,7 @@ Reactive Programming
 * https://github.com/ReactiveX/RxKotlin
 * https://github.com/reactor/reactor-kotlin-extensions
 
-###  参考
+###  References
 
 * http://www.reactive-streams.org: Reactive Streams is an initiative to provide a standard for asynchronous stream processing with non-blocking back pressure
 * http://reactivex.io: An API for asynchronous programming with observable streams
