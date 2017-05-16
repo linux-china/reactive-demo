@@ -27,8 +27,12 @@ Reactive Programming
 
 * Publisher: A Publisher is a provider of a potentially unbounded number of sequenced elements, publishing them according to the demand received from its Subscriber(s).
 * Subscriber: Receive call to onSubscribe(Subscription) once after passing an instance of Subscriber to Publisher.subscribe(Subscriber).
-* Subscription: A Subscription represents a one-to-one lifecycle of a Subscriber subscribing to a Publisher.
+* Subscription: A Subscription represents a one-to-one lifecycle of a Subscriber subscribing to a Publisher, use subscription.request() method to request items.
 * Processor:  Processor represents a processing stage—which is both a Subscriber and a Publisher and obeys the contracts of both
+
+### Java 9
+
+* Flow:  Interrelated interfaces and static methods for establishing flow-controlled components
 
 ##### RxJava
 
