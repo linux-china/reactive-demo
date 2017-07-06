@@ -36,14 +36,16 @@ Reactive Programming
 
 ##### RxJava
 
-* Observer: Provides a mechanism for receiving push-based notifications
 * Observable: This class provides methods for subscribing to the Observable as well as delegate methods to the various Observers.
+* Single: Reactive Pattern for a single value response
+* Observer: Provides a mechanism for receiving push-based notifications
 * Subscriber: Provides a mechanism for receiving push-based notifications from Observables, and permits manual unsubscribing from these Observables.
 
 ##### Reactor
 
 * Flux: A Reactive Streams {@link Publisher} with rx operators that emits 0 to N elements, and then completes  (successfully or with an error).
 * Mono: A Reactive Streams {@link Publisher} with basic rx operators that completes successfully by emitting an element, or with an error.
+* FluxSink: next/error/complete sink to push data to flux
 
 ### RxJava VS Reactor
 
