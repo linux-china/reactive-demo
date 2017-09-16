@@ -12,8 +12,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <rxjava.version>1.3.0</rxjava.version>
-        <kotlin.version>1.1.3-2</kotlin.version>
+        <rxjava.version>1.3.1</rxjava.version>
+        <kotlin.version>1.1.4-3</kotlin.version>
     </properties>
 
     <dependencies>
