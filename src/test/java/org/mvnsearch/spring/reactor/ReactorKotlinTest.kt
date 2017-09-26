@@ -2,6 +2,7 @@ package org.mvnsearch.spring.reactor
 
 import org.junit.Test
 import reactor.core.publisher.toMono
+import reactor.test.test
 
 /**
  * reactor kotlin test
@@ -17,5 +18,6 @@ class ReactorKotlinTest {
         mono.subscribe() {
             println(it)
         }
+        mono.test().expectNext("foo").verifyComplete();
     }
 }
