@@ -43,11 +43,6 @@
             <version>${kotlin.version}</version>
         </dependency>
         <dependency>
-            <groupId>io.projectreactor</groupId>
-            <artifactId>reactor-kotlin-extensions</artifactId>
-            <version>1.0.0.M2</version>
-        </dependency>
-        <dependency>
             <groupId>io.reactivex</groupId>
             <artifactId>rxkotlin</artifactId>
             <version>1.0.0</version>
