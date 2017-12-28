@@ -9,6 +9,7 @@ Reactive Programming
 * asynchronous: 异步的
 * non-blocking: 非阻塞的
 * Observable 可观测的
+* Single: 单个的
 * Flux: 流量
 * Mono: 单一
 
@@ -67,7 +68,7 @@ Reactive Programming
 * https://tech.io/playgrounds/929/reactive-programming-with-reactor-3/content/Intro
 * http://reactivex.io/documentation/operators.html: reactive operations
 * https://dzone.com/articles/functional-amp-reactive-spring-along-with-netflix: Functional and Reactive Spring with Reactor and Netflix OSS
-
+* RxJava2 响应式编程介绍: https://zouzhberk.github.io/rxjava-study/
 ### Demo
 
 * https://github.com/reactor/lite-rx-api-hands-on
