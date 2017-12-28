@@ -2,6 +2,7 @@ package org.mvnsearch.spring.reactor;
 
 import org.junit.Test;
 import rx.Observable;
+import rx.Single;
 import rx.Subscriber;
 import rx.functions.Action1;
 
@@ -13,6 +14,11 @@ import java.util.concurrent.TimeUnit;
  * @author linux_china
  */
 public class RxJavaTest {
+
+    @Test
+    public void testSingle() {
+        Single.just("Jacky").subscribe(System.out::println);
+    }
 
     @Test
     public void testSpike() {
@@ -32,11 +38,11 @@ public class RxJavaTest {
                     }
                 });
         System.out.println("=================");
-        Observable.just(1,2,3).subscribe(System.out::println);
+        Observable.just(1, 2, 3).subscribe(System.out::println);
     }
 
     @Test
-    public void testInterval() throws Exception{
+    public void testInterval() throws Exception {
         Observable.interval(1, TimeUnit.SECONDS).subscribe(new Action1<Long>() {
             @Override
             public void call(Long aLong) {
