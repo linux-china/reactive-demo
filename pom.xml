@@ -13,7 +13,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <rxjava.version>1.3.4</rxjava.version>
-        <kotlin.version>1.2.10</kotlin.version>
+        <kotlin.version>1.2.20</kotlin.version>
         <retrofit.version>2.3.0</retrofit.version>
     </properties>
 
@@ -21,7 +21,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.16.18</version>
+            <version>1.16.20</version>
         </dependency>
         <dependency>
             <groupId>io.projectreactor</groupId>
@@ -35,7 +35,7 @@
         <dependency>
             <groupId>io.reactivex.rxjava2</groupId>
             <artifactId>rxjava</artifactId>
-            <version>2.1.8</version>
+            <version>2.1.9</version>
         </dependency>
         <!--retrofit reactor-->
         <dependency>
@@ -98,7 +98,7 @@
             <dependency>
                 <groupId>io.projectreactor</groupId>
                 <artifactId>reactor-bom</artifactId>
-                <version>Bismuth-SR4</version>
+                <version>Bismuth-SR5</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
