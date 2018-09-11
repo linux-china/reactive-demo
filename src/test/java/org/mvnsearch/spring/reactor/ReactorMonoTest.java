@@ -12,6 +12,12 @@ public class ReactorMonoTest {
 
     @Test
     public void testCreate() {
+        Mono.fromCallable(() -> "good").subscribe(System.out::println);
         Mono.just("good").subscribe(System.out::println);
+    }
+
+    @Test
+    public void testListen() {
+        
     }
 }
