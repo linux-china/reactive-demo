@@ -3,6 +3,7 @@ package org.mvnsearch.spring.reactor
 import org.junit.Test
 import rx.lang.kotlin.subscribeBy
 import rx.lang.kotlin.toObservable
+import rx.subjects.PublishSubject
 
 /**
  * RxKotlin test
@@ -23,5 +24,15 @@ class RxKotlinTest {
                         onCompleted = { println("Done!") }
                 )
 
+    }
+
+    @Test
+    fun testPublisher() {
+        var subject = PublishSubject.create<Int>()
+        subject.subscribe {
+            println("The number is $it")
+        }
+        subject.onNext(1)
+        subject.onNext(2)
     }
 }
