@@ -5,6 +5,8 @@ import reactor.core.publisher.Flux;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.function.Consumer;
+import java.util.stream.Collectors;
 
 /**
  * reactor test
@@ -45,4 +47,24 @@ public class ReactorFluxTest {
         });
         Flux<List<String>> buffer = objectFlux.buffer();
     }
+
+    @Test
+    public void testBuffer() {
+        Flux<String> sequences = Flux.just("1", "2", "3", "4", "5");
+        sequences.buffer(2).subscribe(new Consumer<List<String>>() {
+            @Override
+            public void accept(List<String> strings) {
+                System.out.println(strings.size());
+            }
+        });
+    }
+
+    @Test
+    public void testTerminal() {
+        Flux<String> names = Flux.just("one", "two", "three");
+        names.map(String::toUpperCase)
+                .collect(Collectors.joining(","))
+                .subscribe(System.out::println);
+    }
+
 }
