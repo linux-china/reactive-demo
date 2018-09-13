@@ -60,6 +60,12 @@ Reactive Programming
 * https://github.com/ReactiveX/RxKotlin
 * https://github.com/reactor/reactor-kotlin-extensions
 
+### RSocket
+Please start RSocketServer then execute following command for testing:
+```
+rsocket-cli --request -i "I am a Client" tcp://localhost:7000
+```
+
 ###  References
 
 * http://www.reactive-streams.org: Reactive Streams is an initiative to provide a standard for asynchronous stream processing with non-blocking back pressure
