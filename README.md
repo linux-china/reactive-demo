@@ -75,6 +75,9 @@ rsocket-cli --request -i "I am a Client" tcp://localhost:7000
 * http://reactivex.io/documentation/operators.html: reactive operations
 * https://dzone.com/articles/functional-amp-reactive-spring-along-with-netflix: Functional and Reactive Spring with Reactor and Netflix OSS
 * RxJava2 响应式编程介绍: https://zouzhberk.github.io/rxjava-study/
+* Reactive Streams: https://github.com/reactive-streams/reactive-streams-jvm/blob/v1.0.2/README.md#specification
+* RSocket: http://rsocket.io/
+
 ### Demo
 
 * https://github.com/reactor/lite-rx-api-hands-on
