@@ -12,7 +12,7 @@ import io.rsocket.util.DefaultPayload;
  * @author linux_china
  */
 public class RSocketClient {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         RSocket socket =
                 RSocketFactory.connect()
                         .transport(TcpClientTransport.create("localhost", 7000))
@@ -22,7 +22,7 @@ public class RSocketClient {
         socket.requestResponse(DefaultPayload.create("Hello"))
                 .map(Payload::getDataUtf8)
                 .onErrorReturn("error")
-                .doOnNext(System.out::println)
-                .block();
+                .subscribe(System.out::println);
+        Thread.sleep(1000);
     }
 }
