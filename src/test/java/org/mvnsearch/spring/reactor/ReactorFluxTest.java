@@ -4,7 +4,6 @@ import com.google.common.eventbus.EventBus;
 import com.google.common.eventbus.Subscribe;
 import org.junit.Test;
 import reactor.core.publisher.Flux;
-import reactor.core.publisher.FluxSink;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
@@ -57,6 +56,10 @@ public class ReactorFluxTest {
         objectFlux.subscribe(System.out::println);
         eventBus.post("first");
         eventBus.post("second");
+        Thread.sleep(100);
+        System.out.println("wake up");
+        eventBus.post("three");
+        eventBus.post("four");
         Thread.sleep(10000);
 
     }
