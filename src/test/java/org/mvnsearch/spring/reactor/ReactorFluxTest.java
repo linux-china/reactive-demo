@@ -4,11 +4,8 @@ import com.google.common.eventbus.EventBus;
 import com.google.common.eventbus.Subscribe;
 import org.junit.Test;
 import reactor.core.publisher.Flux;
-import reactor.core.publisher.FluxSink;
 
-import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
-import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 /**
@@ -64,12 +61,10 @@ public class ReactorFluxTest {
     @Test
     public void testBuffer() {
         Flux<String> sequences = Flux.just("1", "2", "3", "4", "5");
-        sequences.buffer(2).subscribe(new Consumer<List<String>>() {
-            @Override
-            public void accept(List<String> strings) {
-                System.out.println(strings.size());
-            }
-        });
+        sequences.buffer(2).flatMap(strings -> {
+            System.out.println("length:" + strings.size());
+            return Flux.fromStream(strings.stream().map(i -> i + ":"));
+        }).subscribe(System.out::print);
     }
 
     @Test
