@@ -1,7 +1,10 @@
 package org.mvnsearch.spring.reactor;
 
+import com.google.common.eventbus.EventBus;
+import com.google.common.eventbus.Subscribe;
 import org.junit.Test;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.FluxSink;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
@@ -41,11 +44,21 @@ public class ReactorFluxTest {
     }
 
     @Test
-    public void testCreate() {
+    public void testCreate() throws Exception {
+        EventBus eventBus = new EventBus();
         Flux<String> objectFlux = Flux.create(sink -> {
-            sink.next("good");
+            eventBus.register(new EventListener() {
+                @Subscribe
+                public void stringEvent(String event) {
+                    sink.next(event);
+                }
+            });
         });
-        Flux<List<String>> buffer = objectFlux.buffer();
+        objectFlux.subscribe(System.out::println);
+        eventBus.post("first");
+        eventBus.post("second");
+        Thread.sleep(10000);
+
     }
 
     @Test
