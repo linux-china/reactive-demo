@@ -16,8 +16,8 @@
         <rxjava2.version>2.2.2</rxjava2.version>
         <kotlin.version>1.2.71</kotlin.version>
         <retrofit.version>2.4.0</retrofit.version>
-        <rsocket.version>0.11.8</rsocket.version>
-        <spring-boot.version>2.1.0.M4</spring-boot.version>
+        <rsocket.version>0.11.9</rsocket.version>
+        <spring-boot.version>2.1.0.RC1</spring-boot.version>
     </properties>
 
     <dependencies>
