@@ -77,7 +77,5 @@ rsocket-cli --request -i "I am a Client" tcp://localhost:7000
 * RxJava2 响应式编程介绍: https://zouzhberk.github.io/rxjava-study/
 * Reactive Streams: https://github.com/reactive-streams/reactive-streams-jvm/blob/v1.0.2/README.md#specification
 * RSocket: http://rsocket.io/
-
-### Demo
-
-* https://github.com/reactor/lite-rx-api-hands-on
+* Reactor Netty: http://projectreactor.io/docs/netty/release/reference/index.html
+* Reactor Testing: http://projectreactor.io/docs/core/release/reference/index.html
