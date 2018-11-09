@@ -33,7 +33,9 @@ Reactive Programming
 
 ### Java 9
 
-* Flow:  Interrelated interfaces and static methods for establishing flow-controlled components
+https://www.baeldung.com/java-9-reactive-streams
+
+* Flow: Interrelated interfaces and static methods for establishing flow-controlled components
 
 ##### RxJava
 
@@ -42,11 +44,22 @@ Reactive Programming
 * Observer: Provides a mechanism for receiving push-based notifications
 * Subscriber: Provides a mechanism for receiving push-based notifications from Observables, and permits manual unsubscribing from these Observables.
 
+#### RxJava 2
+
+RxJava 2 features several base classes you can discover operators on:
+
+* io.reactivex.Flowable: 0..N flows, supporting Reactive-Streams and backpressure
+* io.reactivex.Observable: 0..N flows, no backpressure,
+* io.reactivex.Single: a flow of exactly 1 item or an error,
+* io.reactivex.Completable: a flow without items but only a completion or error signal,
+* io.reactivex.Maybe: a flow with no items, exactly one item or an error.
+
 ##### Reactor
 
 * Flux: A Reactive Streams {@link Publisher} with rx operators that emits 0 to N elements, and then completes  (successfully or with an error).
 * Mono: A Reactive Streams {@link Publisher} with basic rx operators that completes successfully by emitting an element, or with an error.
 * FluxSink: next/error/complete sink to push data to flux
+* FluxProcessor: processor
 
 ### RxJava VS Reactor
 
