@@ -1,4 +1,4 @@
-package org.mvnsearch.spring.reactor
+package org.mvnsearch.rxjava
 
 import org.junit.Test
 import rx.lang.kotlin.subscribeBy
@@ -17,12 +17,12 @@ class RxKotlinTest {
         val list = listOf("Alpha", "Beta", "Gamma", "Delta", "Epsilon")
 
         list.toObservable() // extension function for Iterables
-                .filter { it.length >= 5 }
-                .subscribeBy(// named arguments for lambda Subscribers
-                        onNext = { println(it) },
-                        onError = { it.printStackTrace() },
-                        onCompleted = { println("Done!") }
-                )
+            .filter { it.length >= 5 }
+            .subscribeBy(// named arguments for lambda Subscribers
+                onNext = { println(it) },
+                onError = { it.printStackTrace() },
+                onCompleted = { println("Done!") }
+            )
 
     }
 

@@ -1,4 +1,4 @@
-package org.mvnsearch.spring.reactor;
+package org.mvnsearch.rxjava;
 
 import org.junit.Test;
 import rx.Observable;
