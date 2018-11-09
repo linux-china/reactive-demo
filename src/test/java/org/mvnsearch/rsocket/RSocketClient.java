@@ -15,6 +15,8 @@ public class RSocketClient {
     public static void main(String[] args) throws Exception {
         RSocket socket =
                 RSocketFactory.connect()
+                        .metadataMimeType("text/plain")
+                        .dataMimeType("application/json")
                         .transport(TcpClientTransport.create("localhost", 7000))
                         .start()
                         .block();
