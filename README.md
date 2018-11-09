@@ -35,7 +35,8 @@ Reactive Programming
 
 https://www.baeldung.com/java-9-reactive-streams
 
-* Flow: Interrelated interfaces and static methods for establishing flow-controlled components
+* java.util.concurrent.Flow: Interrelated interfaces and static methods for establishing flow-controlled components
+* SubmissionPublisher: publisher
 
 ##### RxJava
 
