@@ -1,4 +1,4 @@
-package org.mvnsearch.spring.reactor;
+package org.mvnsearch.reactor;
 
 import reactor.core.publisher.Mono;
 import retrofit2.http.GET;

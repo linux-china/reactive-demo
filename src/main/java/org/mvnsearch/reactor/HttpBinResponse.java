@@ -1,4 +1,4 @@
-package org.mvnsearch.spring.reactor;
+package org.mvnsearch.reactor;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
