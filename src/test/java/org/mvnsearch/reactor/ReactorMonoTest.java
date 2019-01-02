@@ -1,4 +1,4 @@
-package org.mvnsearch.spring.reactor;
+package org.mvnsearch.reactor;
 
 import com.google.common.base.Joiner;
 import com.google.common.eventbus.EventBus;
@@ -12,6 +12,7 @@ import reactor.core.publisher.Mono;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.BiFunction;
 
 /**
  * reactor mon test
@@ -24,12 +25,31 @@ public class ReactorMonoTest {
     public void testCreate() {
         Mono.fromCallable(() -> "good").subscribe(System.out::println);
         Mono.just("good").subscribe(System.out::println);
+        Mono.just("first").doOnNext(it -> {
+            System.out.println(it);
+        }).subscribe(it -> {
+            System.out.println(it);
+        });
     }
 
     @Test
     public void testListen() {
         System.out.println(Mono.just(1).block());
-        System.out.println(Flux.just(1,2,3).collectList().block());
+        System.out.println(Flux.just(1, 2, 3).collectList().block());
+    }
+
+
+    @Test
+    public void testZipWith() {
+        Mono<Integer> result = Mono.just(1);
+        result.zipWith(Mono.just("demo"), new BiFunction<Integer, String, String>() {
+            @Override
+            public String apply(Integer integer, String s) {
+                return s + ":" + integer;
+            }
+        }).subscribe(t -> {
+            System.out.println(t);
+        });
     }
 
     @Test

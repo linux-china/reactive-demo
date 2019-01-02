@@ -1,4 +1,4 @@
-package org.mvnsearch.spring.reactor;
+package org.mvnsearch.reactor;
 
 import org.junit.Test;
 import org.springframework.web.reactive.function.client.WebClient;

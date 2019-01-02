@@ -1,12 +1,17 @@
-package org.mvnsearch.spring.reactor;
+package org.mvnsearch.reactor;
 
 import com.google.common.eventbus.EventBus;
 import com.google.common.eventbus.Subscribe;
 import org.junit.Test;
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import reactor.core.publisher.Flux;
-import reactor.core.publisher.SynchronousSink;
+import reactor.core.publisher.Mono;
+import reactor.core.scheduler.Schedulers;
+import reactor.test.publisher.TestPublisher;
+import reactor.util.context.Context;
 
 import java.time.Duration;
 import java.util.Arrays;
@@ -22,13 +27,86 @@ import java.util.stream.Collectors;
  */
 public class ReactorFluxTest {
 
+
     /**
      * flux simple create, such as from array, list
      */
     @Test
     public void testSimpleCreate() {
-        Flux<String> flux = Flux.just("red", "white", "blue");
-        flux.map(String::toUpperCase).doOnNext(System.out::println).subscribe();
+        Flux<String> flux = Flux.just("red", "White", "blue");
+        flux.map(String::toUpperCase).subscribe(System.out::println);
+        flux.filter(str -> str.length() > 3).map(String::toLowerCase).subscribe(System.out::println);
+    }
+
+    @Test
+    public void testContext() {
+        Flux<Integer> flux = Flux.just(1, 2); //1
+        Flux<String> stringFlux = flux.flatMap(i -> {
+            return Mono.subscriberContext().map(ctx -> i + " pid: " +
+                    ctx.getOrDefault("pid", 0));
+        });
+        stringFlux.subscriberContext(Context.of("pid", 1))
+                .subscribe(System.out::println);
+    }
+
+    @Test
+    public void testBatch() {
+        Flux<Integer> flux = Flux.just(1, 2, 3, 4, 5);
+        flux.buffer(2).map(list1 -> {
+            System.out.println("size:" + list1);
+            return list1.size();
+        }).subscribe(System.out::println);
+    }
+
+    @Test
+    public void testTestPublisher() {
+        TestPublisher<Integer> publisher = TestPublisher.<Integer>create();
+        publisher.subscribe(new Subscriber<Integer>() {
+            @Override
+            public void onSubscribe(Subscription s) {
+                s.request(10);
+            }
+
+            @Override
+            public void onNext(Integer integer) {
+                System.out.println(integer);
+            }
+
+            @Override
+            public void onError(Throwable t) {
+
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        });
+        publisher.next(1);
+        publisher.next(2);
+    }
+
+
+    @Test
+    public void testSchedulers() throws Exception {
+        Flux.generate(
+                AtomicLong::new,
+                (state, sink) -> {
+                    long i = state.getAndIncrement();
+                    sink.next("3 x " + i + " = " + 3 * i);
+                    System.out.println("Generate thread:" + Thread.currentThread().getName());
+                    if (i == 10) sink.complete();
+                    return state;
+                })
+                .publishOn(Schedulers.parallel())
+                .subscribeOn(Schedulers.single())
+                .subscribe(t -> {
+                    System.out.println("Subscribe thread:" + Thread.currentThread().getName());
+                    System.out.println(t);
+                });
+
+
+        Thread.sleep(1000);
     }
 
     /**
@@ -82,12 +160,12 @@ public class ReactorFluxTest {
 
     @Test
     public void testZip() {
-        Flux.just(1, 2).zipWith(Flux.just(3, 4)).subscribe(t -> System.out.println(t));
+        Flux.just(1, 2).zipWith(Flux.just(3, 4)).subscribe(System.out::println);
     }
 
     @Test
     public void testRepeat() throws Exception {
-        Flux.just(1, 3).repeat(2).subscribe(t -> System.out.println(t));
+        Flux.just(1, 3).repeat(2).subscribe(System.out::println);
     }
 
     @Test
@@ -122,7 +200,7 @@ public class ReactorFluxTest {
                 .mergeWith(Flux.just(4, 5))
                 .delayElements(Duration.ofSeconds(1))
                 .doOnNext(t -> System.out.println("on:" + t))
-                .subscribe(e -> System.out.println(e));
+                .subscribe(System.out::println);
         Thread.sleep(7000);
     }
 
