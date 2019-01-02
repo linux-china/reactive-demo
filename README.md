@@ -2,6 +2,7 @@ Reactive Programming
 ====================
 
 ### Demos
+Please use JDK 11 to run all demos.
 
 * Java 9 Flow
 * RxJava 1.x
@@ -84,12 +85,6 @@ RxJava 2 features several base classes you can discover operators on:
 
 * https://github.com/ReactiveX/RxKotlin
 * https://github.com/reactor/reactor-kotlin-extensions
-
-### RSocket
-Please start RSocketServer then execute following command for testing:
-```
-rsocket-cli --request -i "I am a Client" tcp://localhost:7000
-```
 
 ###  References
 
