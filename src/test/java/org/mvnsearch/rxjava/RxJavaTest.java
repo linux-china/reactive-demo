@@ -5,11 +5,12 @@ import rx.Observable;
 import rx.Single;
 import rx.Subscriber;
 import rx.functions.Action1;
+import rx.subjects.PublishSubject;
 
 import java.util.concurrent.TimeUnit;
 
 /**
- * rxjava test
+ * rxjava 1.x test
  *
  * @author linux_china
  */
@@ -18,6 +19,14 @@ public class RxJavaTest {
     @Test
     public void testSingle() {
         Single.just("Jacky").subscribe(System.out::println);
+    }
+
+    @Test
+    public void testEmit() {
+        PublishSubject<String> subject = PublishSubject.create();
+        subject.subscribe(System.out::println);
+        subject.onNext("first");
+        subject.onNext("second");
     }
 
     @Test
