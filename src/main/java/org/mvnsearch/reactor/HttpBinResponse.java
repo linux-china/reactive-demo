@@ -6,7 +6,7 @@ import lombok.Data;
 import java.util.Map;
 
 /**
- * httpbin reponse
+ * httpbin response
  *
  * @author linux_china
  */
