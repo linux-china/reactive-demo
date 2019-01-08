@@ -9,6 +9,7 @@ import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+import reactor.core.publisher.MonoProcessor;
 
 import java.util.Arrays;
 import java.util.List;
@@ -20,6 +21,19 @@ import java.util.function.BiFunction;
  * @author linux_china
  */
 public class ReactorMonoTest {
+
+    @Test
+    public void testTerminal() throws Exception {
+        MonoProcessor<Void> onClose = MonoProcessor.create();
+        onClose.doOnTerminate(() -> {
+            System.out.println("terminal1");
+        }).subscribe();
+        onClose.doOnTerminate(() -> {
+            System.out.println("terminal2");
+        }).subscribe();
+        onClose.onComplete();
+        Thread.sleep(1000);
+    }
 
     @Test
     public void testCreate() {
