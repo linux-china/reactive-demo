@@ -74,6 +74,15 @@ RxJava 2 features several base classes you can discover operators on:
 * FluxSink: next/error/complete sink to push data to flux
 * FluxProcessor: processor
 
+#### Akka Stream
+
+* Source： A processing stage with exactly one output, emitting data elements whenever downstream processing stages are ready to receive them.
+* Sink: A processing stage with exactly one input, requesting and accepting data elements possibly slowing down the upstream producer of elements
+* Flow: A processing stage which has exactly one input and output, which connects its up- and downstreams by transforming the data elements flowing through it.
+* Source.single: Stream a single object
+
+Operators: https://doc.akka.io/docs/akka/2.5/stream/operators/index.html#source-operators
+
 ### RxJava VS Reactor
 
 * RxJava诞生早，使用广泛，尤其在Netflix产品中
