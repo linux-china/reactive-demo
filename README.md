@@ -76,6 +76,8 @@ RxJava 2 features several base classes you can discover operators on:
 
 #### Akka Stream
 
+Stream process: Source -> Flow -> Sink
+
 * Source： A processing stage with exactly one output, emitting data elements whenever downstream processing stages are ready to receive them.
 * Sink: A processing stage with exactly one input, requesting and accepting data elements possibly slowing down the upstream producer of elements
 * Flow: A processing stage which has exactly one input and output, which connects its up- and downstreams by transforming the data elements flowing through it.
