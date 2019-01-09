@@ -53,7 +53,7 @@
         <!--akka-->
         <dependency>
             <groupId>com.typesafe.akka</groupId>
-            <artifactId>akka-actor_2.12</artifactId>
+            <artifactId>akka-stream_2.12</artifactId>
             <version>${akka.version}</version>
         </dependency>
         <!--retrofit reactor-->
