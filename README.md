@@ -87,9 +87,18 @@ Operators: https://doc.akka.io/docs/akka/2.5/stream/operators/index.html#source-
 
 ### Kafka Streams
 
+https://kafka.apache.org/documentation/streams/
+
 * Topology: A topology is an acyclic graph of sources, processors, and sinks.
 * KafkaStreams: A Kafka client that allows for performing continuous computation on input coming from one or more input topics and sends output to zero, one, or more output topics.
 * KStream: an abstraction of a <i>record stream</i> of eyValue pairs
+
+### Kafka Reactor
+
+https://projectreactor.io/docs/kafka/release/reference/
+
+* KafkaSender: publishing messages to Kafka
+* KafkaReceiver: consuming messages from Kafka
 
 ### RxJava VS Reactor
 
