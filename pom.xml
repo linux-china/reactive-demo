@@ -18,6 +18,7 @@
         <retrofit.version>2.5.0</retrofit.version>
         <rsocket.version>0.11.15</rsocket.version>
         <akka.version>2.5.19</akka.version>
+        <kafka.version>2.1.0</kafka.version>
         <spring-boot.version>2.1.1.RELEASE</spring-boot.version>
     </properties>
 
@@ -55,6 +56,12 @@
             <groupId>com.typesafe.akka</groupId>
             <artifactId>akka-stream_2.12</artifactId>
             <version>${akka.version}</version>
+        </dependency>
+        <!--kafka streams-->
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-streams</artifactId>
+            <version>${kafka.version}</version>
         </dependency>
         <!--retrofit reactor-->
         <dependency>
