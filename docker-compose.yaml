@@ -1,0 +1,26 @@
+version: '3'
+services:
+   zookeeper:
+     image: zookeeper:3.4.13
+     ports:
+       - "2181:2181"
+       - "2888:2888"
+       - "3888:3888"
+   kafka:
+     image: wurstmeister/kafka:2.12-2.1.0
+     ports:
+       - "9092:9092"
+     environment:
+       KAFKA_ADVERTISED_HOST_NAME: 127.0.01
+       KAFKA_CREATE_TOPICS: "Topic1:1:1:delete,testTopic:1:1:delete"
+       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+   kafka-manager:
+     image: sheepkiller/kafka-manager
+     ports:
+       - "9000:9000"
+     links:
+       - kafka
+       - zookeeper
+     environment:
+       APPLICATION_SECRET: 123456
+       ZK_HOSTS: zookeeper:2181
