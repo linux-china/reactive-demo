@@ -170,8 +170,19 @@ public class ReactorFluxTest {
 
     @Test
     public void testWindow() {
-        Flux.just(1, 2, 3, 4, 5).window(2).subscribe(t -> t.count().subscribe(System.out::println));
+        Flux.just(1, 2, 3, 4, 5)
+                .window(2)
+                .subscribe(flux -> flux.count().subscribe(System.out::println));
     }
+
+    @Test
+    public void testTakeWhile() throws Exception{
+        Flux.just(1, 2, 3, 4, 5)
+                .takeUntil(number -> number < 3)
+                .subscribe(System.out::println);
+        Thread.sleep(1000);
+    }
+
 
     @Test
     public void testBuffer() {
