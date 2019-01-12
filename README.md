@@ -85,6 +85,12 @@ Stream process: Source -> Flow -> Sink
 
 Operators: https://doc.akka.io/docs/akka/2.5/stream/operators/index.html#source-operators
 
+### Kafka Streams
+
+* Topology: A topology is an acyclic graph of sources, processors, and sinks.
+* KafkaStreams: A Kafka client that allows for performing continuous computation on input coming from one or more input topics and sends output to zero, one, or more output topics.
+* KStream: an abstraction of a <i>record stream</i> of eyValue pairs
+
 ### RxJava VS Reactor
 
 * RxJava诞生早，使用广泛，尤其在Netflix产品中
