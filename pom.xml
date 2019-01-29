@@ -14,7 +14,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <rxjava.version>1.3.8</rxjava.version>
         <rxjava2.version>2.2.6</rxjava2.version>
-        <kotlin.version>1.3.11</kotlin.version>
+        <kotlin.version>1.3.20</kotlin.version>
         <retrofit.version>2.5.0</retrofit.version>
         <rsocket.version>0.11.15</rsocket.version>
         <akka.version>2.5.19</akka.version>
@@ -193,6 +193,24 @@
                 <groupId>org.jetbrains.kotlin</groupId>
                 <version>${kotlin.version}</version>
                 <executions>
+                    <execution>
+                        <id>kapt</id>
+                        <goals>
+                            <goal>kapt</goal>
+                        </goals>
+                        <configuration>
+                            <sourceDirs>
+                                <sourceDir>${project.basedir}/src/main/kotlin</sourceDir>
+                            </sourceDirs>
+                            <annotationProcessorPaths>
+                                <annotationProcessorPath>
+                                    <groupId>org.openjdk.jmh</groupId>
+                                    <artifactId>jmh-generator-annprocess</artifactId>
+                                    <version>${jmh.version}</version>
+                                </annotationProcessorPath>
+                            </annotationProcessorPaths>
+                        </configuration>
+                    </execution>
                     <execution>
                         <id>compile</id>
                         <phase>process-sources</phase>
