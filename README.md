@@ -73,6 +73,7 @@ RxJava 2 features several base classes you can discover operators on:
 * Mono: A Reactive Streams {@link Publisher} with basic rx operators that completes successfully by emitting an element, or with an error.
 * FluxSink: next/error/complete sink to push data to flux
 * FluxProcessor: processor
+* Signal: A domain representation of a Reactive Stream signal. There are 4 distinct signals and their possible sequence is defined as such: onError | (onSubscribe onNext* (onError | onComplete)?)
 
 #### Akka Stream
 
