@@ -3,12 +3,14 @@ package org.mvnsearch.reactor;
 import com.google.common.eventbus.EventBus;
 import com.google.common.eventbus.Subscribe;
 import org.junit.Test;
+import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+import reactor.core.publisher.Signal;
 import reactor.core.scheduler.Schedulers;
 import reactor.test.publisher.TestPublisher;
 import reactor.util.context.Context;
@@ -17,6 +19,7 @@ import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -47,6 +50,15 @@ public class ReactorFluxTest {
         });
         stringFlux.subscriberContext(Context.of("pid", 1))
                 .subscribe(System.out::println);
+    }
+
+    @Test
+    public void testSwitchOnFirst() throws Exception {
+        Flux.just(1, 2, 3).switchOnFirst((BiFunction<Signal<? extends Integer>, Flux<Integer>, Publisher<?>>) (signal, integerFlux) -> {
+            System.out.println("signal:" + signal.get());
+            return integerFlux.skip(1);
+        }).subscribe(num -> System.out.println(num));
+        Thread.sleep(1000);
     }
 
     @Test
@@ -176,7 +188,7 @@ public class ReactorFluxTest {
     }
 
     @Test
-    public void testTakeWhile() throws Exception{
+    public void testTakeWhile() throws Exception {
         Flux.just(1, 2, 3, 4, 5)
                 .takeUntil(number -> number < 3)
                 .subscribe(System.out::println);
