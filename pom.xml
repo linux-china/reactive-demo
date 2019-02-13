@@ -35,7 +35,6 @@
         <dependency>
             <groupId>io.projectreactor</groupId>
             <artifactId>reactor-core</artifactId>
-            <version>3.2.6.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>io.projectreactor.addons</groupId>
@@ -174,7 +173,7 @@
             <dependency>
                 <groupId>io.projectreactor</groupId>
                 <artifactId>reactor-bom</artifactId>
-                <version>Californium-SR4</version>
+                <version>Californium-SR5</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
