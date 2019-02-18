@@ -108,6 +108,8 @@ https://projectreactor.io/docs/kafka/release/reference/
 * 在Java 8支持方面，Reactor基于Java 8，而RxJava是自己的API
 * RxJava的模型在其他语言都有实现，如果你用多语言的场景化，RxJava的模型更好一些，如Angular等
 
+https://www.nurkiewicz.com/2019/02/rxjava-vs-reactor.html
+
 ### Kotlin Extension
 
 * https://github.com/ReactiveX/RxKotlin
