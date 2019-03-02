@@ -147,6 +147,11 @@
             <version>${rsocket.version}</version>
         </dependency>
         <dependency>
+            <groupId>io.rsocket</groupId>
+            <artifactId>rsocket-transport-local</artifactId>
+            <version>${rsocket.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webflux</artifactId>
         </dependency>
