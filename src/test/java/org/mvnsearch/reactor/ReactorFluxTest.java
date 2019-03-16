@@ -42,6 +42,18 @@ public class ReactorFluxTest {
     }
 
     @Test
+    public void testMergeMonAndFlux() throws Exception{
+        Flux.just(1).mergeWith(Flux.just(2, 3, 4)).subscribe(System.out::println);
+        Thread.sleep(1000);
+    }
+
+    @Test
+    public void testDefer() throws Exception {
+        Flux.defer(() -> Flux.just("1", "2")).subscribe(t -> System.out.println(t));
+        Thread.sleep(1000);
+    }
+
+    @Test
     public void testContext() {
         Flux<Integer> flux = Flux.just(1, 2); //1
         Flux<String> stringFlux = flux.flatMap(i -> {
