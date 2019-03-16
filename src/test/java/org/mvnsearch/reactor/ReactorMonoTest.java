@@ -23,6 +23,27 @@ import java.util.function.BiFunction;
 public class ReactorMonoTest {
 
     @Test
+    public void testEmptyWithError() {
+        System.out.println(Mono.error(new Exception("goood")).switchIfEmpty(Mono.just("first")).block());
+    }
+
+    @Test
+    public void testMonoProcessor() throws Exception {
+        MonoProcessor<String> monoProcessor = MonoProcessor.create();
+        monoProcessor.subscribe(System.out::println);
+        monoProcessor.onNext("first");
+        Thread.sleep(1000);
+    }
+
+    @Test
+    public void testSpike() throws Exception {
+        Mono.just("first")
+                .doFinally(s -> System.out.println("success"))
+                .subscribe(System.out::println);
+        Thread.sleep(1000);
+    }
+
+    @Test
     public void testTerminal() throws Exception {
         MonoProcessor<Void> onClose = MonoProcessor.create();
         onClose.doOnTerminate(() -> {
