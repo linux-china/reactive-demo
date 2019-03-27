@@ -66,6 +66,8 @@ RxJava 2 features several base classes you can discover operators on:
 * io.reactivex.Single: a flow of exactly 1 item or an error,
 * io.reactivex.Completable: a flow without items but only a completion or error signal,
 * io.reactivex.Maybe: a flow with no items, exactly one item or an error.
+* Notification: Represents the reactive signal types: onNext, onError and onComplete and holds their parameter values (a value, a Throwable, nothing)
+* Subject: Represents an Observer and an Observable at the same time, allowing multicasting events from a single source to multiple child Observers
 
 ##### Reactor
 
