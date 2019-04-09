@@ -117,6 +117,23 @@ https://www.nurkiewicz.com/2019/02/rxjava-vs-reactor.html
 * https://github.com/ReactiveX/RxKotlin
 * https://github.com/reactor/reactor-kotlin-extensions
 
+### BlockHound
+BlockHound(block代码猎犬)是一个Java agent，主要检测非阻塞线程中的同步调用。 我们常见的同步方法如下：
+
+* java.lang.Thread:  sleep, yield, onSpinWait
+* java.lang.Object: wait
+* java.io.RandomAccessFile: read0, readBytes, write0, writeBytes
+* java.io.FileInputStream: read0, readBytes
+* java.io.FileOutputStream: write, writeBytes
+* java.net.Socket: connect
+* java.net.DatagramSocket: connect
+* java.net.PlainDatagramSocketImpl: connect0, peekData, send
+* java.net.PlainSocketImpl: socketAccept
+* java.net.SocketInputStream: socketRead0
+* java.net.SocketOutputStream: socketWrite0
+
+凡是涉及到以上代码
+
 ###  References
 
 * http://www.reactive-streams.org: Reactive Streams is an initiative to provide a standard for asynchronous stream processing with non-blocking back pressure
