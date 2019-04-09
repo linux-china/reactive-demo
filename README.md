@@ -131,8 +131,15 @@ BlockHound(block代码猎犬)是一个Java agent，主要检测非阻塞线程�
 * java.net.PlainSocketImpl: socketAccept
 * java.net.SocketInputStream: socketRead0
 * java.net.SocketOutputStream: socketWrite0
+* sun.misc.Unsafe: park
+* jdk.internal.misc.Unsafe: park
+* java.lang.ProcessImpl: forkAndExec
+* java.lang.UNIXProcess: forkAndExec
+
 
 凡是涉及到以上代码，都是同步调用，需要注意，尤其是使用wait和notifyAll来设计线程协调。
+
+* java.util.concurrent.CountDownLatch: await
 
 ###  References
 
