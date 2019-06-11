@@ -13,7 +13,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>11</java.version>
-        <reactor-bom.version>Californium-SR8</reactor-bom.version>
+        <reactor-bom.version>Californium-SR9</reactor-bom.version>
         <rxjava.version>1.3.8</rxjava.version>
         <rxjava2.version>2.2.9</rxjava2.version>
         <kotlin.version>1.3.31</kotlin.version>
@@ -79,7 +79,7 @@
         <dependency>
             <groupId>com.github.akarnokd</groupId>
             <artifactId>rxjava2-extensions</artifactId>
-            <version>0.20.8</version>
+            <version>0.20.9</version>
         </dependency>
         <!--akka-->
         <dependency>
