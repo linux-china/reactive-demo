@@ -21,7 +21,7 @@
         <rsocket.version>0.11.21</rsocket.version>
         <akka.version>2.5.22</akka.version>
         <kafka.version>2.2.0</kafka.version>
-        <spring-boot.version>2.1.5.RELEASE</spring-boot.version>
+        <spring-boot.version>2.1.6.RELEASE</spring-boot.version>
     </properties>
 
     <dependencies>
@@ -79,7 +79,7 @@
         <dependency>
             <groupId>com.github.akarnokd</groupId>
             <artifactId>rxjava2-extensions</artifactId>
-            <version>0.20.9</version>
+            <version>0.20.10</version>
         </dependency>
         <!--akka-->
         <dependency>
@@ -96,7 +96,7 @@
         <dependency>
             <groupId>io.projectreactor.kafka</groupId>
             <artifactId>reactor-kafka</artifactId>
-            <version>1.1.0.RELEASE</version>
+            <version>1.1.1.RELEASE</version>
         </dependency>
         <!--retrofit reactor-->
         <dependency>
