@@ -154,3 +154,4 @@ BlockHound(block代码猎犬)是一个Java agent，主要检测非阻塞线程�
 * RSocket: http://rsocket.io/
 * Reactor Netty: http://projectreactor.io/docs/netty/release/reference/index.html
 * Reactor Testing: http://projectreactor.io/docs/core/release/reference/index.html
+* RxJava Extensions: https://github.com/akarnokd
