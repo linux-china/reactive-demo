@@ -1,8 +1,7 @@
 package org.mvnsearch.rxjava
 
+import io.reactivex.rxkotlin.toObservable
 import org.junit.Test
-import rx.lang.kotlin.subscribeBy
-import rx.lang.kotlin.toObservable
 import rx.subjects.PublishSubject
 
 /**
@@ -18,17 +17,15 @@ class RxKotlinTest {
 
         list.toObservable() // extension function for Iterables
             .filter { it.length >= 5 }
-            .subscribeBy(// named arguments for lambda Subscribers
-                onNext = { println(it) },
-                onError = { it.printStackTrace() },
-                onCompleted = { println("Done!") }
-            )
+            .subscribe {
+                println(it)
+            }
 
     }
 
     @Test
     fun testPublisher() {
-        var subject = PublishSubject.create<Int>()
+        val subject = PublishSubject.create<Int>()
         subject.subscribe {
             println("The number is $it")
         }
