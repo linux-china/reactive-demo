@@ -13,6 +13,7 @@ Please use JDK 11 to run all demos.
 * Reactive with HTTP: webclient & retrofit
 * Kotlin
 * Webflux
+* Kotlin Coroutines Flow
 
 ### Glossary
 
