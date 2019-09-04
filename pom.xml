@@ -22,8 +22,7 @@
         <rsocket.version>1.0.0-RC3</rsocket.version>
         <akka.version>2.5.22</akka.version>
         <kafka-stream.version>2.3.0</kafka-stream.version>
-        <spring.version>5.1.7.RELEASE</spring.version>
-        <spring-boot.version>2.1.7.RELEASE</spring-boot.version>
+        <spring-boot.version>2.2.0.M5</spring-boot.version>
     </properties>
 
     <dependencies>
@@ -206,13 +205,6 @@
                 <version>${kotlinx-coroutines.version}</version>
                 <scope>import</scope>
                 <type>pom</type>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-framework-bom</artifactId>
-                <version>${spring.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>io.projectreactor</groupId>
