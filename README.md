@@ -45,6 +45,14 @@ Please use JDK 11 to run all demos.
 * Subscription: A Subscription represents a one-to-one lifecycle of a Subscriber subscribing to a Publisher, use subscription.request() method to request items.
 * Processor:  Processor represents a processing stage—which is both a Subscriber and a Publisher and obeys the contracts of both
 
+### ReactiveX
+
+* Observable
+* Operators
+* Single
+* Subject
+* Scheduler
+
 ### Java 9
 
 https://www.baeldung.com/java-9-reactive-streams
