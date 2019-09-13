@@ -21,7 +21,7 @@
         <kotlinx-coroutines.version>1.3.1</kotlinx-coroutines.version>
         <retrofit.version>2.6.1</retrofit.version>
         <rsocket.version>1.0.0-RC3</rsocket.version>
-        <akka.version>2.5.22</akka.version>
+        <akka.version>2.5.25</akka.version>
         <kafka-stream.version>2.3.0</kafka-stream.version>
         <spring-boot.version>2.2.0.M6</spring-boot.version>
     </properties>
@@ -61,7 +61,7 @@
         <dependency>
             <groupId>io.projectreactor.addons</groupId>
             <artifactId>reactor-pool</artifactId>
-            <version>0.0.1.M3</version>
+            <version>0.1.0.RC1</version>
         </dependency>
         <dependency>
             <groupId>io.reactivex</groupId>
@@ -119,7 +119,7 @@
         <dependency>
             <groupId>com.squareup.okhttp3</groupId>
             <artifactId>okhttp</artifactId>
-            <version>4.1.0</version>
+            <version>4.2.0</version>
         </dependency>
         <!--kotlin related -->
         <dependency>
