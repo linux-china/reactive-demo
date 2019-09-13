@@ -4,6 +4,7 @@ import com.badoo.reaktive.observable.observableOf
 import com.badoo.reaktive.observable.subscribe
 import com.badoo.reaktive.single.singleOf
 import com.badoo.reaktive.single.subscribe
+import com.badoo.reaktive.subject.publish.publishSubject
 import org.junit.Test
 
 /**
@@ -28,6 +29,17 @@ class ReaktiveTest {
         flow.subscribe {
             println(it)
         }
+        Thread.sleep(1000)
+    }
+
+    @Test
+    fun testSubject() {
+        val subject = publishSubject<String>()
+        subject.subscribe {
+            println(it)
+        }
+        subject.onNext("first")
+        subject.onNext("second")
         Thread.sleep(1000)
     }
 }
