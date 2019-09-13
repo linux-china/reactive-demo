@@ -14,6 +14,7 @@ Please use JDK 11 to run all demos.
 * Kotlin
 * Webflux
 * Kotlin Coroutines Flow
+* Reaktive: Kotlin multi-platform implementation of Reactive Extensions
 
 ### Glossary
 
@@ -156,3 +157,4 @@ BlockHound(block代码猎犬)是一个Java agent，主要检测非阻塞线程�
 * Reactor Netty: http://projectreactor.io/docs/netty/release/reference/index.html
 * Reactor Testing: http://projectreactor.io/docs/core/release/reference/index.html
 * RxJava Extensions: https://github.com/akarnokd
+* Reaktive — a multiplatform library for reactive Kotlin: https://github.com/badoo/Reaktive https://badootech.badoo.com/reaktive-a-multiplatform-library-for-reactive-kotlin-android-ios-77b6ff25adb1
