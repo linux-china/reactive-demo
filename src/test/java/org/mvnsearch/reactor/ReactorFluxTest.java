@@ -8,6 +8,7 @@ import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import reactor.core.publisher.DirectProcessor;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.core.publisher.Signal;
@@ -16,6 +17,7 @@ import reactor.test.publisher.TestPublisher;
 import reactor.util.context.Context;
 
 import java.time.Duration;
+import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
@@ -30,6 +32,21 @@ import java.util.stream.Collectors;
  */
 public class ReactorFluxTest {
 
+    @Test
+    public void testDelaySequence() throws Exception {
+        DirectProcessor<Object> processor = DirectProcessor.create();
+        System.out.println(LocalDateTime.now());
+        processor.delaySequence(Duration.ofSeconds(2)).subscribe(t -> {
+            System.out.println(LocalDateTime.now() + ": " + t);
+        });
+        processor.onNext(1);
+        processor.onNext(2);
+        System.out.println(LocalDateTime.now());
+        Thread.sleep(1000);
+        processor.onNext(3);
+        processor.onNext(4);
+        Thread.sleep(5000);
+    }
 
     /**
      * flux simple create, such as from array, list
@@ -42,7 +59,7 @@ public class ReactorFluxTest {
     }
 
     @Test
-    public void testMergeMonAndFlux() throws Exception{
+    public void testMergeMonAndFlux() throws Exception {
         Flux.just(1).mergeWith(Flux.just(2, 3, 4)).subscribe(System.out::println);
         Thread.sleep(1000);
     }
