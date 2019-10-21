@@ -2,6 +2,7 @@ package org.mvnsearch.reactor;
 
 import org.junit.Test;
 import reactor.core.publisher.Mono;
+import reactor.util.context.Context;
 
 /**
  * Reactor context test  https://projectreactor.io/docs/core/release/reference/#context
@@ -26,4 +27,16 @@ public class ReactorContextTest {
                 });
         Thread.sleep(1000);
     }
+
+    @Test
+    public void testDeferWithContext() throws Exception {
+        Mono.deferWithContext(ctx -> Mono.just(ctx.get("nick")))
+                .subscriberContext(Context.of("nick", "linux_china"))
+                .subscribe(nick -> {
+                    System.out.println(nick);
+                });
+        Thread.sleep(1000);
+
+    }
+
 }
