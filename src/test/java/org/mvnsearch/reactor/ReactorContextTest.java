@@ -2,7 +2,6 @@ package org.mvnsearch.reactor;
 
 import org.junit.Test;
 import reactor.core.publisher.Mono;
-import reactor.util.context.Context;
 
 /**
  * Reactor context test  https://projectreactor.io/docs/core/release/reference/#context
@@ -13,13 +12,15 @@ public class ReactorContextTest {
 
     @Test
     public void testContextSupport() throws Exception {
+        MutableContext context = new MutableContext();
+        context.put("nic2", "Jackie");
         Mono.just("Hello")
                 .flatMap(s -> Mono.subscriberContext()
                         .map(ctx -> {
                             return s + " " + ctx.get("nick");
                         }))
                 .subscriberContext(ctx -> ctx.put("nick", "Reactor"))
-                .subscriberContext(Context.of("nic2","reactor"))
+                .subscriberContext(context)
                 .subscribe(t -> {
                     System.out.println(t);
                 });
