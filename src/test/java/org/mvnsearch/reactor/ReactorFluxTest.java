@@ -33,6 +33,32 @@ import java.util.stream.Collectors;
 public class ReactorFluxTest {
 
     @Test
+    public void testDoFirst() throws Exception {
+        Flux.just(1, 2, 3)
+                .doFirst(() -> {
+                    System.out.println("first");
+                })
+                .doOnTerminate(() -> {
+                    System.out.println("finally");
+                })
+                .subscribe(number -> {
+                    System.out.println(number);
+                });
+        Thread.sleep(1000);
+    }
+
+    @Test
+    public void testTakeFirst() throws Exception {
+        Flux.just("id,name", "1,leijuan", "2,juven").switchOnFirst((signal, stringFlux) -> {
+            System.out.println("First: " + signal.get());
+            return stringFlux.skip(1);
+        }).subscribe(text -> {
+            System.out.println(text);
+        });
+        Thread.sleep(1000);
+    }
+
+    @Test
     public void testDelaySequence() throws Exception {
         DirectProcessor<Object> processor = DirectProcessor.create();
         System.out.println(LocalDateTime.now());
@@ -53,7 +79,7 @@ public class ReactorFluxTest {
      */
     @Test
     public void testSimpleCreate() {
-        Flux<String> flux = Flux.just("red", "White", "blue");
+        Flux<String> flux = Flux.just("red", "White", "blue").delayElements(Duration.ofMillis(100));
         flux.map(String::toUpperCase).subscribe(System.out::println);
         flux.filter(str -> str.length() > 3).map(String::toLowerCase).subscribe(System.out::println);
     }
