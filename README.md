@@ -151,6 +151,16 @@ BlockHound(block代码猎犬)是一个Java agent，主要检测非阻塞线程�
 
 * java.util.concurrent.CountDownLatch: await
 
+
+### Exception handling
+
+Reactor for handling error: doOnError, onErrorMap, onErrorReturn, and onErrorResume
+
+* doOnError: executed when an error is thrown and hasn't been caught
+* onErrorMap: used to map an error into another error. As it's only being mapped, the error is still thrown
+* onErrorReturn: set a fallback value that will be returned if error is thrown. The next operator in the chain will get the fallback value instead of error.
+* onErrorResume: set a fallback method that will be executed if error is thrown. The next operator in the chain will get the result of the fallback method instead of error.
+
 ###  References
 
 * http://www.reactive-streams.org: Reactive Streams is an initiative to provide a standard for asynchronous stream processing with non-blocking back pressure
