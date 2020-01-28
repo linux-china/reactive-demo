@@ -176,3 +176,4 @@ Reactor for handling error: doOnError, onErrorMap, onErrorReturn, and onErrorRes
 * Reactor Testing: http://projectreactor.io/docs/core/release/reference/index.html
 * RxJava Extensions: https://github.com/akarnokd
 * Reaktive — a multiplatform library for reactive Kotlin: https://github.com/badoo/Reaktive https://badootech.badoo.com/reaktive-a-multiplatform-library-for-reactive-kotlin-android-ios-77b6ff25adb1
+* Reactive Spring Boot: https://learning.oreilly.com/live-training/courses/reactive-spring-boot/0636920371410/
