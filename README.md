@@ -13,25 +13,25 @@ Please use JDK 11 to run all demos.
 * Reactive with HTTP: webclient & retrofit
 * Kotlin
 * Webflux
-* Kotlin Coroutines Flow
+* Kotlin Coroutines & Flow
 * Reaktive: Kotlin multi-platform implementation of Reactive Extensions
 
 ### Glossary
 
 * reactive: 响应的，响应式的
-* stream: 流式的
+* streaming: 流式的
 * asynchronous: 异步的
 * non-blocking: 非阻塞的
 * Observable 可观测的
 * Single: 单个的
 * Flux: 流量
-* Mono: 单一
+* Mono: 单一的
 
 ### Reactive Operation
 
 * Creation
 * Combine
-* transform(map)
+* transform(map,flatMap)
 * Filter
 * Mathematical and Aggregate Operators
 * Utility Operators
@@ -67,7 +67,7 @@ https://www.baeldung.com/java-9-reactive-streams
 * Observer: Provides a mechanism for receiving push-based notifications
 * Subscriber: Provides a mechanism for receiving push-based notifications from Observables, and permits manual unsubscribing from these Observables.
 
-#### RxJava 2
+#### RxJava 2 & 3
 
 RxJava 2 features several base classes you can discover operators on:
 
