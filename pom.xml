@@ -94,6 +94,11 @@
             <artifactId>rxjava2-extensions</artifactId>
             <version>0.20.10</version>
         </dependency>
+        <dependency>
+            <groupId>com.github.akarnokd</groupId>
+            <artifactId>rxjava3-extensions</artifactId>
+            <version>${rxjava3.version}</version>
+        </dependency>
         <!--akka-->
         <dependency>
             <groupId>com.typesafe.akka</groupId>
