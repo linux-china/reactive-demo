@@ -177,3 +177,4 @@ Reactor for handling error: doOnError, onErrorMap, onErrorReturn, and onErrorRes
 * RxJava Extensions: https://github.com/akarnokd
 * Reaktive — a multiplatform library for reactive Kotlin: https://github.com/badoo/Reaktive https://badootech.badoo.com/reaktive-a-multiplatform-library-for-reactive-kotlin-android-ios-77b6ff25adb1
 * Reactive Spring Boot: https://learning.oreilly.com/live-training/courses/reactive-spring-boot/0636920371410/
+* Reactive marble diagram generator: https://bitbucket.org/achary/rx-marbles/  https://medium.com/@jshvarts/read-marble-diagrams-like-a-pro-3d72934d3ef5
