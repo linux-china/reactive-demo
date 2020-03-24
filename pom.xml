@@ -90,6 +90,11 @@
             <version>2.4.0</version>
         </dependency>
         <dependency>
+            <groupId>io.reactivex.rxjava3</groupId>
+            <artifactId>rxkotlin</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        <dependency>
             <groupId>com.github.akarnokd</groupId>
             <artifactId>rxjava2-extensions</artifactId>
             <version>0.20.10</version>
@@ -97,7 +102,7 @@
         <dependency>
             <groupId>com.github.akarnokd</groupId>
             <artifactId>rxjava3-extensions</artifactId>
-            <version>${rxjava3.version}</version>
+            <version>3.0.0</version>
         </dependency>
         <!--akka-->
         <dependency>
