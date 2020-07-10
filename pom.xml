@@ -222,6 +222,11 @@
             <artifactId>coroutines-interop-jvm</artifactId>
             <version>${reaktive.version}</version>
         </dependency>
+        <dependency>
+            <groupId>io.smallrye.reactive</groupId>
+            <artifactId>mutiny</artifactId>
+            <version>0.6.0</version>
+        </dependency>
         <!--unit test-->
         <dependency>
             <groupId>junit</groupId>
