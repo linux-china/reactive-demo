@@ -13,18 +13,20 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>11</java.version>
-        <reactor-bom.version>Dysprosium-SR10</reactor-bom.version>
+        <reactor-bom.version>Dysprosium-SR11</reactor-bom.version>
         <rxjava.version>1.3.8</rxjava.version>
         <rxjava2.version>2.2.19</rxjava2.version>
         <rxjava3.version>3.0.5</rxjava3.version>
         <reaktive.version>1.1.16</reaktive.version>
-        <kotlin.version>1.3.72</kotlin.version>
-        <kotlinx-coroutines.version>1.3.6</kotlinx-coroutines.version>
-        <retrofit.version>2.8.1</retrofit.version>
-        <rsocket.version>1.0.1</rsocket.version>
-        <akka.version>2.6.4</akka.version>
-        <kafka-stream.version>2.4.1</kafka-stream.version>
-        <spring-boot.version>2.3.2.RELEASE</spring-boot.version>
+        <mutiny.version>0.7.0</mutiny.version>
+        <kotlin.version>1.4.0</kotlin.version>
+        <kotlinx-coroutines.version>1.3.9</kotlinx-coroutines.version>
+        <okhttp3.version>4.8.1</okhttp3.version>
+        <retrofit.version>2.9.0</retrofit.version>
+        <rsocket.version>1.0.2</rsocket.version>
+        <akka.version>2.6.8</akka.version>
+        <kafka-stream.version>2.6.0</kafka-stream.version>
+        <spring-boot.version>2.3.3.RELEASE</spring-boot.version>
         <resilience4j.version>1.5.0</resilience4j.version>
         <streamex.version>0.7.3</streamex.version>
         <junit5.version>5.6.2</junit5.version>
@@ -147,7 +149,7 @@
         <dependency>
             <groupId>com.squareup.okhttp3</groupId>
             <artifactId>okhttp</artifactId>
-            <version>4.5.0</version>
+            <version>${okhttp3.version}</version>
         </dependency>
         <dependency>
             <groupId>io.github.resilience4j</groupId>
@@ -185,7 +187,7 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>2.10.0</version>
+            <version>2.11.2</version>
         </dependency>
         <!--rsocket-->
         <dependency>
@@ -231,7 +233,7 @@
         <dependency>
             <groupId>io.smallrye.reactive</groupId>
             <artifactId>mutiny</artifactId>
-            <version>0.7.0</version>
+            <version>${mutiny.version}</version>
         </dependency>
         <!--unit test-->
         <dependency>
@@ -263,7 +265,7 @@
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
-            <version>3.13.2</version>
+            <version>3.16.1</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
