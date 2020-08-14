@@ -19,10 +19,10 @@ class HelloKotlinActor : AbstractLoggingActor() {
 
 
 fun main() {
-    val actorSystem = ActorSystem.create("actorSystem1")
+   /* val actorSystem = ActorSystem.create("actorSystem1")
     val helloActor = actorSystem.actorOf(Props.create(HelloKotlinActor::class.java))
     helloActor.tell("jackie", ActorRef.noSender())
     Thread.sleep(1000)
-    actorSystem.terminate()
+    actorSystem.terminate()*/
 }
 
