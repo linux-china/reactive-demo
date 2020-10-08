@@ -112,7 +112,7 @@
         <dependency>
             <groupId>com.github.akarnokd</groupId>
             <artifactId>rxjava3-extensions</artifactId>
-            <version>3.0.0</version>
+            <version>3.0.1</version>
         </dependency>
         <!--akka-->
         <dependency>
@@ -187,7 +187,7 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>2.11.2</version>
+            <version>2.11.3</version>
         </dependency>
         <!--rsocket-->
         <dependency>
@@ -271,7 +271,7 @@
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
-            <version>3.16.1</version>
+            <version>3.17.2</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
