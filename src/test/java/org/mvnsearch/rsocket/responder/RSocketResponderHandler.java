@@ -1,6 +1,5 @@
 package org.mvnsearch.rsocket.responder;
 
-import io.rsocket.AbstractRSocket;
 import io.rsocket.ConnectionSetupPayload;
 import io.rsocket.Payload;
 import io.rsocket.RSocket;
@@ -11,7 +10,7 @@ import reactor.core.publisher.Mono;
  *
  * @author linux_china
  */
-public class RSocketResponderHandler extends AbstractRSocket {
+public class RSocketResponderHandler implements RSocket {
 
     public RSocketResponderHandler(ConnectionSetupPayload setup, RSocket sendingSocket) {
 

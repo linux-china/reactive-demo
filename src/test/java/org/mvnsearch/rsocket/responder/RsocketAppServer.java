@@ -1,6 +1,6 @@
 package org.mvnsearch.rsocket.responder;
 
-import io.rsocket.RSocketFactory;
+import io.rsocket.core.RSocketServer;
 import io.rsocket.transport.netty.server.TcpServerTransport;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,19 +14,18 @@ import javax.annotation.PostConstruct;
  * @author linux_china
  */
 @SpringBootApplication
-public class RsocketServer {
+public class RsocketAppServer {
 
     public static void main(String[] args) throws Exception {
-        SpringApplication.run(RsocketServer.class, args);
+        SpringApplication.run(RsocketAppServer.class, args);
     }
 
     @PostConstruct
     public void init() {
         System.out.println("Starting the RSocket Server");
-        RSocketFactory.receive()
+        RSocketServer.create()
                 .acceptor((setup, sendingSocket) -> Mono.just(new RSocketResponderHandler(setup, sendingSocket)))
-                .transport(TcpServerTransport.create("localhost", 42252))
-                .start()
+                .bind(TcpServerTransport.create("localhost", 42252))
                 .subscribe();
     }
 }
