@@ -1,6 +1,8 @@
 Reactive Programming
 ====================
 
+![Reactive Landscape](reactive-landscape.png)
+
 ### Demos
 Please use JDK 11 to run all demos.
 
