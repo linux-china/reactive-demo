@@ -4,7 +4,7 @@ import com.badoo.reaktive.observable.observableOf
 import com.badoo.reaktive.observable.subscribe
 import com.badoo.reaktive.single.singleOf
 import com.badoo.reaktive.single.subscribe
-import com.badoo.reaktive.subject.publish.publishSubject
+import com.badoo.reaktive.subject.publish.PublishSubject
 import org.junit.Test
 
 /**
@@ -34,7 +34,7 @@ class ReaktiveTest {
 
     @Test
     fun testSubject() {
-        val subject = publishSubject<String>()
+        val subject = PublishSubject<String>()
         subject.subscribe {
             println(it)
         }
