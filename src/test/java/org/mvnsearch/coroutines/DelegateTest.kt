@@ -1,5 +1,6 @@
 package org.mvnsearch.coroutines
 
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -24,13 +25,7 @@ class DelegateTest {
         println(p)
         Thread.sleep(1000)
     }
-
-    fun test2() {
-        val lazyValue: String by lazy {
-            println("computed!")
-            "Hello"
-        }
-    }
+    
 }
 
 fun delegate2(initializer: () -> String): Delegate2 {
