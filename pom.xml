@@ -18,7 +18,7 @@
         <rxjava2.version>2.2.21</rxjava2.version>
         <rxjava3.version>3.0.13</rxjava3.version>
         <reaktive.version>1.2.0</reaktive.version>
-        <mutiny.version>0.19.2</mutiny.version>
+        <mutiny.version>1.0.0</mutiny.version>
         <kotlin.version>1.5.21</kotlin.version>
         <kotlinx-coroutines.version>1.5.1</kotlinx-coroutines.version>
         <okhttp3.version>5.0.0-alpha.2</okhttp3.version>
@@ -26,7 +26,7 @@
         <rsocket.version>1.1.1</rsocket.version>
         <akka.version>2.6.15</akka.version>
         <kafka-stream.version>2.8.0</kafka-stream.version>
-        <spring-boot.version>2.5.2</spring-boot.version>
+        <spring-boot.version>2.5.3</spring-boot.version>
         <resilience4j.version>1.7.0</resilience4j.version>
         <streamex.version>0.7.3</streamex.version>
         <junit5.version>5.7.2</junit5.version>
