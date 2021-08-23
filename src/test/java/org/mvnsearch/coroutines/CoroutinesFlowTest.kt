@@ -2,7 +2,7 @@ package org.mvnsearch.coroutines
 
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
 /**
  * Coroutines Flow test

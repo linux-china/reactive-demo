@@ -1,7 +1,7 @@
 package org.mvnsearch.rxjava2;
 
 import io.reactivex.Flowable;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * flowable test

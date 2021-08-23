@@ -1,6 +1,6 @@
 package org.mvnsearch.reactor;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.web.reactive.function.client.WebClient;
 
 import java.util.Map;

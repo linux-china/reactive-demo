@@ -2,9 +2,9 @@ package org.mvnsearch.reactor.kafka;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import reactor.core.publisher.Flux;
 import reactor.kafka.receiver.KafkaReceiver;
 import reactor.kafka.receiver.ReceiverOptions;
@@ -22,14 +22,14 @@ import java.util.Map;
 public class KafkaReactorReceiverTest {
     private static Flux<ReceiverRecord<String, String>> inboundFlux;
 
-    @BeforeClass
+    @BeforeAll
     public static void setUp() {
         inboundFlux = KafkaReceiver.create(ReceiverOptions.<String, String>create(consumerProps())
                 .subscription(Collections.singleton("testTopic")))
                 .receive();
     }
 
-    @AfterClass
+    @AfterAll
     public static void tearDown() {
     }
 

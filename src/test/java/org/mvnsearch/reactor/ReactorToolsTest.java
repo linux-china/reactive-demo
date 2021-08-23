@@ -1,7 +1,7 @@
 package org.mvnsearch.reactor;
 
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import reactor.core.publisher.Flux;
 import reactor.tools.agent.ReactorDebugAgent;
 
@@ -13,7 +13,7 @@ import reactor.tools.agent.ReactorDebugAgent;
 public class ReactorToolsTest {
 
 
-    @BeforeClass
+    @BeforeAll
     public static void setUp() {
         ReactorDebugAgent.init();
     }

@@ -1,7 +1,9 @@
 package org.mvnsearch.flow
 
-import org.junit.Test
 
+import kotlinx.coroutines.reactive.asFlow
+import org.junit.jupiter.api.Test
+import reactor.core.publisher.Flux
 import java.util.concurrent.Flow
 import java.util.concurrent.SubmissionPublisher
 
@@ -24,4 +26,15 @@ class FlowTest {
     fun testSecond() {
         Flow.Publisher<String> { }
     }
+
+    @Test
+    fun testFluxToFlow() {
+        Flux.just("1", "2").asFlow();
+    }
+
+    @Test
+    fun testMutableFlow() {
+
+    }
 }
+

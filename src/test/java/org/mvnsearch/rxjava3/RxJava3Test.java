@@ -1,7 +1,14 @@
 package org.mvnsearch.rxjava3;
 
 import io.reactivex.rxjava3.core.Flowable;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import reactor.core.publisher.ConnectableFlux;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+import rx.observables.ConnectableObservable;
+
+import java.lang.reflect.Method;
+import java.lang.reflect.Type;
 
 /**
  * RxJava 3 test
@@ -14,4 +21,14 @@ public class RxJava3Test {
     public void testSpike() {
         Flowable.just("Hello world").subscribe(System.out::println);
     }
+
+    @Test
+    public void testConvert() throws Exception {
+        for (Method method : this.getClass().getDeclaredMethods()) {
+            System.out.println(method.getReturnType().getCanonicalName());
+            Type genericReturnType = method.getGenericReturnType();
+            genericReturnType.getTypeName();
+        }
+    }
+
 }

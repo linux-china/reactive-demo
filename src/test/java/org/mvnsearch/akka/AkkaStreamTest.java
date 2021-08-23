@@ -8,9 +8,9 @@ import akka.stream.Materializer;
 import akka.stream.javadsl.Flow;
 import akka.stream.javadsl.Sink;
 import akka.stream.javadsl.Source;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.CompletionStage;
 
@@ -23,13 +23,13 @@ public class AkkaStreamTest {
     private static ActorSystem system;
     private static Materializer materializer;
 
-    @BeforeClass
+    @BeforeAll
     public static void setUp() {
         system = ActorSystem.create("QuickStart");
         materializer = ActorMaterializer.create(system);
     }
 
-    @AfterClass
+    @AfterAll
     public static void tearDown() {
         system.terminate();
     }

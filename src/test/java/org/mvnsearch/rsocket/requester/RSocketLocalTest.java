@@ -6,9 +6,9 @@ import io.rsocket.core.RSocketServer;
 import io.rsocket.transport.local.LocalClientTransport;
 import io.rsocket.transport.local.LocalServerTransport;
 import io.rsocket.util.DefaultPayload;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import reactor.core.publisher.Mono;
 
 /**
@@ -20,7 +20,7 @@ public class RSocketLocalTest {
     private static RSocket rSocket;
     private static Closeable localServer;
 
-    @BeforeClass
+    @BeforeAll
     public static void setUp() {
         //create a local test server
         localServer = RSocketServer.create()
@@ -44,7 +44,7 @@ public class RSocketLocalTest {
                 .block();
     }
 
-    @AfterClass
+    @AfterAll
     public static void tearDown() {
         rSocket.dispose();
         localServer.dispose();

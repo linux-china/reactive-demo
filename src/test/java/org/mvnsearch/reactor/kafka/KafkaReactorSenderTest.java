@@ -2,8 +2,8 @@ package org.mvnsearch.reactor.kafka;
 
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import reactor.core.publisher.Flux;
 import reactor.kafka.sender.KafkaSender;
 import reactor.kafka.sender.SenderOptions;
@@ -21,7 +21,7 @@ import java.util.UUID;
 public class KafkaReactorSenderTest {
     private static KafkaSender<String, String> sender;
 
-    @BeforeClass
+    @BeforeAll
     public static void setUp() {
         sender = KafkaSender.create(SenderOptions.<String, String>create(producerProps()).maxInFlight(1024));
     }

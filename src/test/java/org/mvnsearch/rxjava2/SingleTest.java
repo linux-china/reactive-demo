@@ -2,7 +2,7 @@ package org.mvnsearch.rxjava2;
 
 import io.reactivex.Maybe;
 import io.reactivex.Single;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * Single Test

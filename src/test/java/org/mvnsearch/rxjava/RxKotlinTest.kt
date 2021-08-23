@@ -1,7 +1,7 @@
 package org.mvnsearch.rxjava
 
 import io.reactivex.rxkotlin.toObservable
-import org.junit.Test
+import org.junit.jupiter.api.Test
 import rx.subjects.PublishSubject
 
 /**

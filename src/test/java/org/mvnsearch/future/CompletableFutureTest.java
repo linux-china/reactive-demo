@@ -1,6 +1,7 @@
 package org.mvnsearch.future;
 
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutorService;

@@ -1,6 +1,6 @@
 package org.mvnsearch.reactor
 
-import org.junit.Test
+import org.junit.jupiter.api.Test
 import reactor.core.publisher.EmitterProcessor
 import reactor.core.publisher.Mono
 import reactor.core.publisher.toMono
@@ -32,8 +32,8 @@ class ReactorKotlinTest {
     fun testPublisher() {
         val emitter = EmitterProcessor.create<Int>()
         emitter
-                .map { it + 1 }
-                .subscribe { println(it) }
+            .map { it + 1 }
+            .subscribe { println(it) }
         emitter.onNext(1)
         emitter.onNext(2)
     }
@@ -50,7 +50,17 @@ class ReactorKotlinTest {
 
     @Test
     fun testMonoGenerator() {
-        Mono.fromSupplier { "demo" }.subscribe {  }
+        Mono.fromSupplier { "demo" }.subscribe { }
+    }
+
+    @Test
+    fun testException() {
+        Mono.empty<String>()
+            .thenReturn("first")
+            .subscribe {
+                println(it)
+            }
+        Thread.sleep(1000)
     }
 
 

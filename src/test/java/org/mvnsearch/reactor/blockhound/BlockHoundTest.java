@@ -1,7 +1,6 @@
 package org.mvnsearch.reactor.blockhound;
 
-import org.junit.Test;
-import reactor.blockhound.BlockHound;
+import org.junit.jupiter.api.Test;
 import reactor.core.publisher.Mono;
 
 import java.security.SecureRandom;
@@ -13,9 +12,6 @@ import java.time.Duration;
  * @author linux_china
  */
 public class BlockHoundTest {
-    static {
-        BlockHound.install();
-    }
 
     @Test
     public void testBlockDetect() throws Exception {
@@ -30,4 +26,6 @@ public class BlockHoundTest {
                 }).subscribe();
         Thread.sleep(3000);
     }
+
+
 }

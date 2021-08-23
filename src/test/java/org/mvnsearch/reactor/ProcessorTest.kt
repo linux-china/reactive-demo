@@ -1,7 +1,8 @@
 package org.mvnsearch.reactor
 
-import org.junit.Test
+import org.junit.jupiter.api.Test
 import reactor.core.publisher.DirectProcessor
+import reactor.core.publisher.Flux
 
 /**
  * Processor test
@@ -13,10 +14,9 @@ class ProcessorTest {
     @Test
     fun testSpike() {
         val processor = DirectProcessor.create<Int>()
-        processor.subscribe {
-            println(it)
-        }
         processor.onNext(1);
         processor.onComplete()
     }
+
+
 }

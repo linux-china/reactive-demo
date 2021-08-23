@@ -2,16 +2,15 @@ package org.mvnsearch.reactor;
 
 import com.google.common.eventbus.EventBus;
 import com.google.common.eventbus.Subscribe;
-import org.junit.Test;
+import io.rsocket.Payload;
+import io.rsocket.RSocket;
+import org.junit.jupiter.api.Test;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import reactor.core.publisher.DirectProcessor;
-import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
-import reactor.core.publisher.Signal;
+import reactor.core.publisher.*;
 import reactor.core.scheduler.Schedulers;
 import reactor.test.publisher.TestPublisher;
 import reactor.util.context.Context;
@@ -31,6 +30,31 @@ import java.util.stream.Collectors;
  * @author linux_china
  */
 public class ReactorFluxTest {
+    
+
+    @Test
+    public void testConnectableFlux() throws Exception {
+        ConnectableFlux<String> flux = Flux.just("1", "2").publish();
+        flux.subscribe(seq -> {
+            System.out.println("sub1:" + seq);
+        });
+        System.out.println("sleep1");
+        Thread.sleep(1000);
+        System.out.println("sleep2");
+        flux.subscribe(seq -> {
+            System.out.println("sub2:" + seq);
+        });
+        flux.connect();
+        Thread.sleep(2000);
+    }
+
+    @Test
+    public void testStartWith() throws Exception {
+        Flux.just("second", "third").startWith("first").subscribe(System.out::println);
+        Thread.sleep(1000);
+
+        Flux<Long> interval = Flux.interval(Duration.ofSeconds(1));
+    }
 
     @Test
     public void testDoFirst() throws Exception {

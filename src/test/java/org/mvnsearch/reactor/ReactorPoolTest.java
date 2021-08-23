@@ -1,6 +1,6 @@
 package org.mvnsearch.reactor;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import reactor.core.publisher.Mono;
 import reactor.pool.Pool;
 import reactor.pool.PoolBuilder;

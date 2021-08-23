@@ -1,7 +1,7 @@
 package org.mvnsearch.reactor.netty;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import reactor.core.Exceptions;
 import reactor.core.publisher.Mono;
 import reactor.netty.Connection;

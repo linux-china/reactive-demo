@@ -5,7 +5,7 @@ import com.badoo.reaktive.observable.subscribe
 import com.badoo.reaktive.single.singleOf
 import com.badoo.reaktive.single.subscribe
 import com.badoo.reaktive.subject.publish.PublishSubject
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
 /**
  * reaktive test
