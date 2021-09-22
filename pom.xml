@@ -29,7 +29,7 @@
         <spring-boot.version>2.5.4</spring-boot.version>
         <resilience4j.version>1.7.1</resilience4j.version>
         <streamex.version>0.7.3</streamex.version>
-        <junit5.version>5.8.0</junit5.version>
+        <junit5.version>5.8.1</junit5.version>
     </properties>
 
     <dependencies>
