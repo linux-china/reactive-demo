@@ -2,8 +2,6 @@ package org.mvnsearch.reactor;
 
 import com.google.common.eventbus.EventBus;
 import com.google.common.eventbus.Subscribe;
-import io.rsocket.Payload;
-import io.rsocket.RSocket;
 import org.junit.jupiter.api.Test;
 import org.reactivestreams.Publisher;
 import org.reactivestreams.Subscriber;
@@ -15,6 +13,9 @@ import reactor.core.scheduler.Schedulers;
 import reactor.test.publisher.TestPublisher;
 import reactor.util.context.Context;
 
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.Arrays;
@@ -23,6 +24,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * reactor test
@@ -30,7 +32,27 @@ import java.util.stream.Collectors;
  * @author linux_china
  */
 public class ReactorFluxTest {
-    
+
+    @Test
+    public void testFinally() throws Exception {
+        Flux.just("abc", "123").doFinally(signalType -> {
+            System.out.println("finally");
+        }).subscribe(s -> {
+            System.out.println(s);
+        });
+        Thread.sleep(1000);
+    }
+
+    @Test
+    public void testReadFile() throws Exception {
+        Flux<String> lines = Flux.using(
+                () -> Files.lines(Path.of("justfile"), StandardCharsets.UTF_8),
+                Flux::fromStream,
+                Stream::close
+        );
+        lines.subscribe(System.out::println);
+        Thread.sleep(1000);
+    }
 
     @Test
     public void testConnectableFlux() throws Exception {
@@ -181,14 +203,14 @@ public class ReactorFluxTest {
     @Test
     public void testSchedulers() throws Exception {
         Flux.generate(
-                AtomicLong::new,
-                (state, sink) -> {
-                    long i = state.getAndIncrement();
-                    sink.next("3 x " + i + " = " + 3 * i);
-                    System.out.println("Generate thread:" + Thread.currentThread().getName());
-                    if (i == 10) sink.complete();
-                    return state;
-                })
+                        AtomicLong::new,
+                        (state, sink) -> {
+                            long i = state.getAndIncrement();
+                            sink.next("3 x " + i + " = " + 3 * i);
+                            System.out.println("Generate thread:" + Thread.currentThread().getName());
+                            if (i == 10) sink.complete();
+                            return state;
+                        })
                 .publishOn(Schedulers.parallel())
                 .subscribeOn(Schedulers.single())
                 .subscribe(t -> {
