@@ -1,7 +1,9 @@
 package org.mvnsearch.flow
 
 
+import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.reactive.asFlow
+import kotlinx.coroutines.runBlocking
 import org.junit.jupiter.api.Test
 import reactor.core.publisher.Flux
 import java.util.concurrent.Flow
@@ -33,8 +35,12 @@ class FlowTest {
     }
 
     @Test
-    fun testMutableFlow() {
-
+    fun testMutableFlow(): Unit = runBlocking {
+       val flow = flowOf("first","second")
+        val messages = flow.shareIn(this, SharingStarted.Eagerly, 0)
+        messages.collect {
+            print(it)
+        }
     }
 }
 
