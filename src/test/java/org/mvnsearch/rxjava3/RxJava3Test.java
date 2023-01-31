@@ -2,10 +2,6 @@ package org.mvnsearch.rxjava3;
 
 import io.reactivex.rxjava3.core.Flowable;
 import org.junit.jupiter.api.Test;
-import reactor.core.publisher.ConnectableFlux;
-import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
-import rx.observables.ConnectableObservable;
 
 import java.lang.reflect.Method;
 import java.lang.reflect.Type;

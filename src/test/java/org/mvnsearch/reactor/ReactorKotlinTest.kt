@@ -3,8 +3,8 @@ package org.mvnsearch.reactor
 import org.junit.jupiter.api.Test
 import reactor.core.publisher.EmitterProcessor
 import reactor.core.publisher.Mono
-import reactor.core.publisher.toMono
-import reactor.test.test
+import reactor.kotlin.core.publisher.toMono
+import reactor.kotlin.test.test
 
 /**
  * reactor kotlin test

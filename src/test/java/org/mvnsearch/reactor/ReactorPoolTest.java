@@ -32,10 +32,10 @@ public class ReactorPoolTest {
     }
 
     static final <T> Function<PoolBuilder<T, ?>, Pool<T>> simplePoolFifo() {
-        return new Function<PoolBuilder<T, ?>, Pool<T>>() {
+        return new Function<>() {
             @Override
             public Pool<T> apply(PoolBuilder<T, ?> builder) {
-                return (Pool<T>) builder.fifo();
+                return builder.buildPool();
             }
 
             @Override
