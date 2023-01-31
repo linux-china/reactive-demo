@@ -2,11 +2,12 @@ package org.mvnsearch.rsocket.responder;
 
 import io.rsocket.core.RSocketServer;
 import io.rsocket.transport.netty.server.TcpServerTransport;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PostConstruct;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import reactor.core.publisher.Mono;
 
-import javax.annotation.PostConstruct;
 
 /**
  * RSocket responder
