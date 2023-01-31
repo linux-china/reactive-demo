@@ -39,10 +39,10 @@ public class ReactorMonoTest {
     @Test
     public void testContext() throws Exception {
         Mono<String> first = Mono.just("demo");
-        Mono.deferWithContext(context -> {
+        Mono.deferContextual(context -> {
             System.out.println(context.get("name").toString());
             return first;
-        }).subscriberContext(Context.of("name", "value"))
+        }).contextWrite(Context.of("name", "value"))
                 .subscribe(text -> {
                     System.out.println(text);
                 });
