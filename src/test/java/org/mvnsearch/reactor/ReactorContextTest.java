@@ -18,15 +18,15 @@ public class ReactorContextTest {
             sink.success(new R2dbcConnection());
         });
         Mono.defer(() -> {
-            return connection.flatMap(connection1 -> {
-                return connection1.beginTransaction().subscriberContext(Context.of(R2dbcConnection.class, connection1));
-            });
-        })
+                    return connection.flatMap(connection1 -> {
+                        return connection1.beginTransaction().contextWrite(Context.of(R2dbcConnection.class, connection1));
+                    });
+                })
                 .thenReturn("goood").flatMap(s -> {
-            return Mono.deferWithContext(context -> {
-                return Mono.just("second");
-            });
-        })
+                    return Mono.deferContextual(context -> {
+                        return Mono.just("second");
+                    });
+                })
                 .subscribe(demo -> {
                     System.out.println(demo);
                 });
@@ -38,12 +38,9 @@ public class ReactorContextTest {
         MutableContext context = new MutableContext();
         context.put("nic2", "Jackie");
         Mono.just("Hello")
-                .flatMap(s -> Mono.subscriberContext()
-                        .map(ctx -> {
-                            return s + " " + ctx.get("nick");
-                        }))
-                .subscriberContext(ctx -> ctx.put("nick", "Reactor"))
-                .subscriberContext(context)
+                .flatMap(s -> Mono.deferContextual(ctx -> Mono.just(s + " " + ctx.get("nick"))))
+                .contextWrite(ctx -> ctx.put("nick", "Reactor"))
+                .contextWrite(context)
                 .subscribe(t -> {
                     System.out.println(t);
                 });
@@ -53,7 +50,7 @@ public class ReactorContextTest {
     @Test
     public void testDeferWithContext() throws Exception {
         Mono.deferContextual(ctx -> Mono.just(ctx.get("nick")))
-                .subscriberContext(Context.of("nick", "linux_china"))
+                .contextWrite(Context.of("nick", "linux_china"))
                 .subscribe(nick -> {
                     System.out.println(nick);
                 });
@@ -66,8 +63,8 @@ public class ReactorContextTest {
         userThreadLocal.set("yourNick");
         MutableContext context = new MutableContext();
         context.put("nick", userThreadLocal.get());
-        Mono.deferWithContext(ctx -> Mono.just(ctx.get("nick")))
-                .subscriberContext(context)
+        Mono.deferContextual(ctx -> Mono.just(ctx.get("nick")))
+                .contextWrite(context)
                 .subscribe(text -> {
                     System.out.println(text);
                 });
@@ -99,13 +96,13 @@ public class ReactorContextTest {
     public void testContextFromOutside() {
         MutableContext context = new MutableContext();
         context.put("greeting", "Hello");
-        String name = monoWithContext("Jackie").subscriberContext(context).block();
+        String name = monoWithContext("Jackie").contextWrite(context).block();
         System.out.println(name);
     }
 
 
     public Mono<String> monoWithContext(String name) {
-        return Mono.deferWithContext((context) -> {
+        return Mono.deferContextual((context) -> {
             return context.get("greeting");
         }).map((greeting) -> {
             return greeting + " " + name;
