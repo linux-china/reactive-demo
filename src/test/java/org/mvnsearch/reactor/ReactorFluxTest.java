@@ -146,10 +146,12 @@ public class ReactorFluxTest {
     public void testContext() {
         Flux<Integer> flux = Flux.just(1, 2); //1
         Flux<String> stringFlux = flux.flatMap(i -> {
-            return Mono.subscriberContext().map(ctx -> i + " pid: " +
-                    ctx.getOrDefault("pid", 0));
+            return Mono.deferContextual(contextView -> {
+                int pid = contextView.get("pid");
+                return Mono.just("pid:" + pid + ",value:" + i);
+            });
         });
-        stringFlux.subscriberContext(Context.of("pid", 1))
+        stringFlux.contextWrite(Context.of("pid", 1))
                 .subscribe(System.out::println);
     }
 
