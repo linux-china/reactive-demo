@@ -17,7 +17,7 @@
     <rxjava.version>1.3.8</rxjava.version>
     <rxjava2.version>2.2.21</rxjava2.version>
     <rxjava3.version>3.1.6</rxjava3.version>
-    <reaktive.version>1.2.3</reaktive.version>
+    <reaktive.version>2.0.0</reaktive.version>
     <mutiny.version>2.4.0</mutiny.version>
     <kotlin.version>1.9.10</kotlin.version>
     <kotlinx-coroutines.version>1.7.3</kotlinx-coroutines.version>
