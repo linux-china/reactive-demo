@@ -12,31 +12,31 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <java.version>17</java.version>
-    <reactor-bom.version>2022.0.10</reactor-bom.version>
+    <java.version>21</java.version>
+    <reactor-bom.version>2023.0.0</reactor-bom.version>
     <rxjava.version>1.3.8</rxjava.version>
     <rxjava2.version>2.2.21</rxjava2.version>
-    <rxjava3.version>3.1.6</rxjava3.version>
-    <reaktive.version>1.2.3</reaktive.version>
+    <rxjava3.version>3.1.8</rxjava3.version>
+    <reaktive.version>2.0.1</reaktive.version>
     <mutiny.version>2.4.0</mutiny.version>
-    <kotlin.version>1.9.10</kotlin.version>
-    <kotlinx-coroutines.version>1.7.3</kotlinx-coroutines.version>
+    <kotlin.version>1.9.21</kotlin.version>
+    <kotlinx-coroutines.version>1.8.0-RC</kotlinx-coroutines.version>
     <okhttp3.version>5.0.0-alpha.11</okhttp3.version>
     <retrofit.version>2.9.0</retrofit.version>
     <rsocket.version>1.1.4</rsocket.version>
     <akka.version>2.8.1</akka.version>
-    <kafka-streams.version>3.5.0</kafka-streams.version>
-    <spring-boot.version>3.1.3</spring-boot.version>
-    <resilience4j.version>2.0.2</resilience4j.version>
-    <streamex.version>0.8.1</streamex.version>
-    <junit5.version>5.10.0</junit5.version>
+    <kafka-streams.version>3.6.0</kafka-streams.version>
+    <spring-boot.version>3.2.0</spring-boot.version>
+    <resilience4j.version>2.1.0</resilience4j.version>
+    <streamex.version>0.8.2</streamex.version>
+    <junit5.version>5.10.1</junit5.version>
   </properties>
 
   <dependencies>
     <dependency>
       <groupId>org.jetbrains</groupId>
       <artifactId>annotations</artifactId>
-      <version>24.0.1</version>
+      <version>24.1.0</version>
     </dependency>
     <dependency>
       <groupId>org.projectlombok</groupId>
@@ -208,7 +208,7 @@
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
-      <version>32.1.2-jre</version>
+      <version>32.1.3-jre</version>
     </dependency>
     <dependency>
       <groupId>io.projectreactor.netty</groupId>
